@@ -1,3 +1,6 @@
+git remote add origin https://github.com/vanyaio/repo.git
+git push -u origin master
+
 git remote -v - info on remote repo
 git rm --cached README  - make untracked and STAYED ON HARDWARE
 git push origin master
