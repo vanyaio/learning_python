@@ -27,7 +27,7 @@ def numbers():
 	data = res.json()
 	print(data['text'])
 
-def dict():
+def yand_dict():
 	url = 'https://dictionary.yandex.net/api/v1/dicservice.json/getLangs?key='
 	api_key = 'dict.1.1.20171217T160347Z.c014fa68efdd5e4a.0bbe21d3d530b534bd6bab22450cc2c9072cca41'
 	url = url + api_key
@@ -60,7 +60,7 @@ def dict():
 	res3 = requests.get(url3, params=params)
 	print(res3.json())
 		
-def trans():
+def yand_trans():
 	url = 'https://translate.yandex.net/api/v1.5/tr.json/translate?' 
 	api_key = 'trnsl.1.1.20171217T164936Z.364a5a0e4b82abbd.67bce170e72f05f61f546d62ddb9a2148ab6b781'
 	
@@ -73,6 +73,26 @@ def trans():
 	}
 	res = requests.get(url, params=params)
 	print(res.json())
+	
+def abbyy():#does not work
+	api_key = "NTUyMjIyZmQtYjRjMi00ZGJmLTg5NmUtN2UwZWMzMzU0Y2RkOjRmZGY3NjdkY2E0NTRmNjZiMTI3MTEwZGViN2RjNDA0"
+	url = "https://developers.lingvolive.com/api/v1.1/authenticate"
+	
+	s1 = "Basic {" + api_key + "}"
+	s2 = "Basic " + api_key
+	
+	headers = { 'Authorization' : 'Basic %s' % api_key}
+	'''
+	headers = {	
+			"key": "Authorization",
+			"value": "Basic {" + api_key + "}",
+			"description": ""
+	}
+	'''      
+	res = requests.get(url,  headers=headers)
+	print(res)
+	
+abbyy()
 
-dict()
+
 
