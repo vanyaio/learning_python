@@ -1,0 +1,7 @@
+info on module:
+	dir(module)
+	print(module.__doc__)
+	help(module)
+
+
+
